@@ -1,0 +1,64 @@
+{
+    "title": "Handmade Chilean Woven Scarf",
+    "description": "This beautiful scarf is handwoven by traditional Chilean artisans using soft, high-quality wool. It's perfect for keeping warm on a chilly day or adding a touch of style to any outfit.",
+    "price": "$50 USD",
+    "img": "no image",
+    "code": "ABC123",
+    "stock": "10",
+    "category": "Clothing",
+    "status": true,
+    "thumbnail": "[]",
+    "id": 1
+},
+
+{
+    "title": "Handwoven Chilean Alpaca Hat",
+    "description": "This luxurious hat is handwoven from soft alpaca wool by skilled Chilean artisans. It's incredibly warm and comfortable, perfect for cold weather days.",
+    "price": "$75 USD",
+    "img": "no image",
+    "code": "ABC124",
+    "stock": "5",
+    "category": "Clothing",
+    "status": true,
+    "thumbnail": "[]",
+    "id": 2
+},
+
+{
+    "title": "Traditional Chilean Mate Gourd",
+    "description": "This beautiful mate gourd is handcrafted from natural materials and decorated with traditional Chilean designs. It's perfect for enjoying your favorite mate beverage.",
+    "price": "$30 USD",
+    "img": "no image",
+    "code": "ABC125",
+    "stock": "15",
+    "category": "Kitchenware",
+    "status": true,
+    "thumbnail": "[]",
+    "id": 3
+},
+
+{
+    "title": "Genuine Chilean Lapis Lazuli Necklace",
+    "description": "This stunning necklace features a genuine Lapis Lazuli stone mined in Chile. The rich blue color and intricate silverwork make it a truly unique piece of jewelry.",
+    "price": "$120 USD",
+    "img": "no image",
+    "code": "ABC126",
+    "stock": "3",
+    "category": "Jewelry",
+    "status": true,
+    "thumbnail": "[]",
+    "id": 4
+},
+
+{
+    "title": "Handmade Chilean Copper Wine Decanter",
+    "description": "This elegant wine decanter is handcrafted from pure Chilean copper. It's a beautiful and functional piece that will enhance your wine-drinking experience.",
+    "price": "$80 USD",
+    "img": "no image",
+    "code": "ABC127",
+    "stock": "8",
+    "category": "Homeware",
+    "status": true,
+    "thumbnail": "[]",
+    "id": 5
+},
