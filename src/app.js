@@ -13,7 +13,7 @@ const PUERTO = 8080;
 //middleware
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-app.use(espress.static("./src/public"));
+app.use(express.static("./src/public"));
 
 //plantillasBigote
 app.engine("handlebars", engine());
@@ -33,31 +33,38 @@ const httpServer = app.listen(PUERTO, () => {
 
 
 import ProductManager from "./controllers/product-manager.js";
-const ProductManager = new ProductManager("./src/models/productos.json");
+const productManager = new ProductManager("./src/models/productos.json");
 
 const io = new Server(httpServer);
 
 io.on("connection", async (socket) => {
     console.log("entró un cliente!");
 
-    //array productos
-    socket.emit("productos", await ProductManager.getProducts());
+    //1array productos
+    socket.emit("productos", await productManager.getProducts());
 
-    //evento eliminarProducto
+    //2evento eliminarProducto
     socket.on("eliminarProducto", async (id) => {
-        await ProductManager.deleteProduct(id); 
+        await productManager.deleteProduct(id); 
 
-        //devuelve lista actualizada
-        io.sockets.emit("productos", await ProductManager.getProducts());
+        //3devuelve lista actualizada
+        io.sockets.emit("productos", await productManager.getProducts());
     })
-    //recibimos el producto
+    //2recibimos el producto
     socket.on("agregarProducto", async (producto) => {
         await productManager.addProduct(producto);
         
-        //devuelve lista actualizada
-         io.sockets.emit("productos", await ProductManager.getProducts());
+        //3devuelve lista actualizada
+         io.sockets.emit("productos", await productManager.getProducts());
     })
 
+    // 2Add productos con un form
+    socket.on("agregarProducto", async (producto) => {
+        await productManager.addProduct(producto);
+
+        //3devuelve lista actualizada
+        io.sockets.emit("productos", await productManager.getProducts());
+    })
 })
 
 

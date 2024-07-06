@@ -8,14 +8,14 @@ class ProductManager{
         this.path = path;
     }
 
-    async addProduct({ title, description, price, image, code, stock, category, thumbnail });
+    async addProduct({ title, description, price, image, code, stock, category, thumbnail })
         try {
             const arrayProductos = await this.leerArchivo(); 
             
-            if (!title, !description, !price, !image, !code, !stock, !category, !thumbnail) {
+            if (!title || !description || !price || !image || !code || !stock || !category || !thumbnail) {
             console.log("tienes que completar todos los campos");
             return;
-        }
+            }
             if (arrayProductos.some(item => item.code === code)) {
                 console.log("No puedes repetir el código");
                 return;
@@ -34,20 +34,20 @@ class ProductManager{
         };
 
         if (arrayProductos.lenght > 0) {
-            ProductManager.ultId = arrayProductos.reduce(maxId, product) => Math.
-        }
+            ProductManager.ultId = arrayProductos.reduce(maxId, product) => Math.max(maxId, product.id), 0);
+             }
 
-        newProduct.id = ++ProductManager.ultId;
+            newProduct.id = ++ProductManager.ultId;
 
-        arrayProductos.push(newProduct);
-        await this.guardarArchivo(arrayProductos);
+            arrayProductos.push(newProduct);
+            await this.guardarArchivo(arrayProductos);
         } catch(error) {
             console.log("error al agregar el producto", error);
             throw error;
         }
-        }
+    }
 
-        async getProducts() {
+    async getProducts() {
         try{
             const arrayProductos = await this.leerArchivo();
             return arrayProductos;
